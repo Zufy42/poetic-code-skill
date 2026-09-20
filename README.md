@@ -2,34 +2,35 @@
 
 > 千秋花落，代码成诗
 
-
-
 ## 这是什么
 
-给 AI 一个编程任务，它通常写出"正确的代码"。装上本技能后，它可以写出**既经得起编译、也经得起推敲**的代码：变量取自意象，结构暗合格律，注释与错误消息由一位有名字、有来历的抒情者说出。
+给 AI 一个编程任务，它通常写出"正确的代码"。装上本技能后，它可以写出**码诗**：变量取自意象，结构暗合格律，注释与错误消息由一位有名字、有来历的抒情者说出。
 
-一段【精诣档】的指数退避重试，长这样：
+示例：
 
 ```python
 import time
 
+# 更鼓有期催过客，烽烟无警度流年
+class 金柝:
+    def __init__(self, 更速: float, 备更: int = 10):
+        self.更速 = 更速
+        self.备更 = 备更
+        self.余更 = 备更
+        self.上更 = time.monotonic()
 
-class 风浪(Exception):
-    """道是无晴却有晴。"""
+    def 候更(self):
+        while True:
+            今 = time.monotonic()
+            self.余更 = min(self.备更, self.余更 + (今 - self.上更) * self.更速)
+            self.上更 = 今
+            if self.余更 >= 1:
+                self.余更 -= 1
+                return
+            time.sleep((1 - self.余更) / self.更速)
 
-
-def 垂钓(撒竿, 至多=5, 静候=1):
-    """青箬笠，绿蓑衣，斜风细雨不须归。——渔夫"""
-    for 静水 in range(至多):
-        try:
-            return 撒竿()
-        except 风浪:
-            if 静水 == 至多 - 1:
-                raise
-            time.sleep(静候 * 2 ** 静水)   # ← 诗眼
 ```
 
-可运行。这不是比喻，是产物。
 
 ## 四档：诗化多深
 
@@ -54,7 +55,7 @@ def 垂钓(撒竿, 至多=5, 静候=1):
 ## 三资产：自由组合
 
 - **场景**（七卡）：田园 / 山水 / 市井 / 边塞 / 怀古 / 赠别 / 应制——定基调、语体、意象池
-- **意象**（120+ 条词典）：天象/地理/植物/动物/器物/人事典故六部，每条附代码映射（鸿雁→消息队列、白衣苍狗→竞态、鸡肋→deprecated、执牛耳→leader election……）
+- **意象**（120+ 条词典）：天象/地理/植物/动物/器物/人事典故六部，每条附代码映射（鸿雁→消息队列、白云苍狗→竞态、鸡肋→deprecated、执牛耳→leader election……）
 - **人格**（八卡）：士兵/渔夫/更夫/史官/医者/驿吏/游子/隐士——附任务现写的人物小传制度
 
 一句选配宣告定下全篇：*"这是一首边塞诗，以斥候的口吻，取鸿雁为象。精诣档，律诗体。"*
@@ -63,7 +64,7 @@ def 垂钓(撒竿, 至多=5, 静候=1):
 
 | 脚本 | 用途 |
 |------|------|
-| `scripts/inspire.py` | 灵感触发器：今日诗词 API 随机抽一句真诗定调（免 key，离线降级） |
+| `scripts/inspire.py` | 灵感触发器：今日诗词 API 随机抽一句古诗定调（免 key，离线降级） |
 | `scripts/pingze.py` | 平仄校验器：逐字标注律联，检查节奏点交替与联对（内置平水韵入声字表 735 字，据 charlesix59/chinese_word_rhyme） |
 
 ```bash
@@ -73,24 +74,10 @@ python scripts/pingze.py "更鼓有期催过客，烽烟无警度流年"
 #   —— ✓ 合律
 ```
 
-## 安装
-
-方式一（pi 用户，一条命令）：
+## 获取方式
 
 ```bash
-pi install git:github.com/zfyyy/poetic-code-skill
-```
-
-方式二（手动，其他 Agent Skills 兼容环境）：
-
-```bash
-git clone https://github.com/zfyyy/poetic-code-skill.git ~/.pi/agent/skills/poetic-code
-```
-
-方式三（临时体验，不安装）：
-
-```bash
-pi --skill <本仓库路径> "用精诣档写一个心跳检测模块"
+git clone https://github.com/zfyyy/poetic-code-skill.git 
 ```
 
 ## 使用
@@ -104,7 +91,7 @@ pi --skill <本仓库路径> "用精诣档写一个心跳检测模块"
 
 完整规则见 [SKILL.md](SKILL.md)，词谱见 [references/cipai.md](references/cipai.md)。
 
-`demo/` 目录收录了一次三段流程（铸坯 → 歌行体淬纹 → 试锋验收）的完整实战对照，可作上手参考。
+`demo/` 目录收录了一次三段流程（铸坯 → 歌行体淬纹 → 试锋验收）的完整对照，可作上手参考。
 
 ## 设计原则
 
@@ -113,13 +100,13 @@ pi --skill <本仓库路径> "用精诣档写一个心跳检测模块"
 3. **无形式不成诗**——注释里的诗句必须是自撰合律句（内置平仄校验器）或真诗引文，白描与仿古散句一律禁绝
 4. **入神是唯一的例外**——最高档只留语法一条镣铐，且须用户显式指定
 
-## 致谢与声明
+## 声明
 
 - 词牌谱据龙榆生《唐宋词格律》（上海古籍出版社）
 - 入声字数据据 [charlesix59/chinese_word_rhyme](https://github.com/charlesix59/chinese_word_rhyme)（平水韵）
 - 灵感接口来自[今日诗词](https://www.jinrishici.com)
 - 格式遵循 [Agent Skills 规范](https://agentskills.io)
-- 所引诗词均为公共领域古典作品；本技能为玩具项目，`入神` 档产物请勿用于生产环境
+- 所引诗词均为公共领域古典作品；本skill为玩具项目，请勿用于生产环境
 
 ## 协议
 
