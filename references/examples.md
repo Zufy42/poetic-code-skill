@@ -38,7 +38,7 @@ def chuidiao(fish, ci_wang=5, deng_yi=1):
             time.sleep(deng_yi * 2 ** jing)   # ← 诗眼
 ```
 
-> 发轱档要点：拼音命名（`chuidiao` 垂钓）、意象只入注释、异常名尚可拟象（`Lang`）但保持可查——lint 不恼，同事不骂。
+> 发轫档要点：拼音命名（`chuidiao` 垂钓）、意象只入注释、异常名尚可拟象（`Lang`）但保持可查——lint 不恼，同事不骂。
 
 ## 二、精诣档（默认：汉字命名，人格入注）
 
