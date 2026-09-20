@@ -77,7 +77,7 @@ python scripts/pingze.py "更鼓有期催过客，烽烟无警度流年"
 ## 获取方式
 
 ```bash
-git clone https://github.com/zfyyy/poetic-code-skill.git 
+git clone https://github.com/Zufy42/poetic-code-skill.git 
 ```
 
 ## 使用
@@ -110,4 +110,4 @@ git clone https://github.com/zfyyy/poetic-code-skill.git
 
 ## 协议
 
-[MIT](LICENSE) © 2026 zfyyy
+[MIT](LICENSE) © 2026 Zufy42

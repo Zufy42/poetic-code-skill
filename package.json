@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zfyyy/poetic-code-skill.git"
+    "url": "git+https://github.com/Zufy42/poetic-code-skill.git"
   },
   "keywords": ["agent-skills", "pi", "poetry", "creative-coding", "中文诗", "平仄"],
   "pi": {
