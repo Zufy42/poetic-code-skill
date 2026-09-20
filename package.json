@@ -1,0 +1,14 @@
+{
+  "name": "poetic-code-skill",
+  "version": "1.0.0",
+  "description": "以诗化风格编写或重构代码的 Agent Skill：场景×意象×人格三资产选配，发轫/精诣/冠古/入神四档，俳句/绝句/律诗/歌行/词牌/自由六体",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfyyy/poetic-code-skill.git"
+  },
+  "keywords": ["agent-skills", "pi", "poetry", "creative-coding", "中文诗", "平仄"],
+  "pi": {
+    "skills": ["."]
+  }
+}
